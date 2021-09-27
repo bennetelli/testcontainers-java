@@ -19,7 +19,8 @@ public class CosmosDBEmulatorContainerTest {
     @Rule
     // emulatorContainer {
     public CosmosDBEmulatorContainer emulator = new CosmosDBEmulatorContainer(
-            DockerImageName.parse("mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:2.11.13-c5c131e3")
+        // Normally we would not use a 'latest' tag, but these images have a built in expiry
+        DockerImageName.parse("mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest")
     );
     // }
 
